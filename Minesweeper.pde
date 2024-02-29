@@ -46,7 +46,7 @@ public boolean isWon()
     for (int i = 0; i < NUM_ROWS; i++) {
       for (int j = 0; j < NUM_COLS; j++) {
         if (!mines.contains(buttons[i][j]) && buttons[i][j].isClicked() == false) {
-          return false;
+          return true;
       }
     }
   }
@@ -65,7 +65,7 @@ public void displayWinningMessage()
 {
     //your code here
     String win = "     You Win!";
-    if (isWon())
+    if (isWon() == true)
      for (int i = 0; i < NUM_COLS; i++) {
       buttons[NUM_COLS / 2][i].setLabel(win.substring(i - 1, i));
     }
