@@ -27,6 +27,7 @@ void setup ()
 }
 public void setMines()
 {
+//your code
     int row = (int)(random(NUM_ROWS));
     int col = (int)(random(NUM_COLS));
     if (!mines.contains(buttons[row][col]))
@@ -41,6 +42,7 @@ public void draw ()
 }
 public boolean isWon()
 {
+//your code
     for (int i = 0; i < NUM_ROWS; i++) {
       for (int j = 0; j < NUM_COLS; j++) {
         if (!mines.contains(buttons[i][j]) && buttons[i][j].isClicked() == false) {
@@ -78,6 +80,7 @@ public boolean isValid(int r, int c)
 public int countMines(int row, int col)
 {
     int numMines = 0;
+//your code
     for (int i = row - 1; i <= row + 1; i++) {
       for (int j = col - 1; j <= col + 1; j++) {
         if (isValid(i, j) && mines.contains(buttons[i][j]))
@@ -112,7 +115,7 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        //your code here
+    //your code here
         if (mouseButton == RIGHT) {
           flagged = !flagged;
           if (flagged == false)
